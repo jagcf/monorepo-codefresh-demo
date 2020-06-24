@@ -6,6 +6,9 @@
     },
     "files": [],
     "references": [
-        { "path": "packages/libs/server-base" }
+        { "path": "packages/libs/server-base" },
+
+        { "path": "packages/servers/game1" },
+        { "path": "packages/servers/game2" }
     ]
 }
