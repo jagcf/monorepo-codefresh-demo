@@ -1,7 +1,7 @@
 import {RequestHandler} from 'express';
 
 // Export a common healthcheck handler to be used by dependant servers
-export const healtcheck: RequestHandler<{}> = async (req, res) => {
+export const healthcheck: RequestHandler<{}> = async (req, res) => {
     res.json({
         status: "pass",
         info: "Service is healthy",
