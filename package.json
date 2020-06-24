@@ -5,5 +5,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
-  "author": "Luke Mundy <luke.mundy@vgw.co"
+  "author": "Luke Mundy <luke.mundy@vgw.co",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
