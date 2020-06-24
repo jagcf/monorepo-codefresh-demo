@@ -2,11 +2,16 @@
   "name": "monorepo-codefresh-demo",
   "description": "A demonstration of how Codefresh can build and deploy from a monorepo",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "lerna run build",
+    "clean": "lerna exec rimraf node_modules/ dist/ tsconfig.tsbuildinfo"
   },
   "private": true,
-  "author": "Luke Mundy <luke.mundy@vgw.co",
+  "author": "Luke Mundy <luke.mundy@vgw.co>",
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "@types/node": "^14.0.13",
+    "codefresh": "^0.69.0",
+    "lerna": "^3.22.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.5"
   }
 }
