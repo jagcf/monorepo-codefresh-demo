@@ -1,0 +1,9 @@
+{
+  "name": "monorepo-codefresh-demo",
+  "description": "A demonstration of how Codefresh can build and deploy from a monorepo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "author": "Luke Mundy <luke.mundy@vgw.co"
+}
