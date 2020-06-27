@@ -15,5 +15,11 @@
   "dependencies": {
     "@types/express": "^4.17.6",
     "express": "^4.17.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist",
+     "registry": "http://0.0.0.0:4873/"
   }
+
 }
