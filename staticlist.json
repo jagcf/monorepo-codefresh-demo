@@ -1,0 +1,20 @@
+[
+  {
+    "name": "@vgw-lib/server-base",
+    "version": "1.0.0",
+    "private": false,
+    "location": "/codefresh/volume/monorepo-codefresh-demo/packages/libs/server-base"
+  },
+  {
+    "name": "@vgw-app/game1",
+    "version": "1.0.0",
+    "private": false,
+    "location": "/codefresh/volume/monorepo-codefresh-demo/packages/servers/game1"
+  },
+  {
+    "name": "@vgw-app/game2",
+    "version": "1.0.0",
+    "private": false,
+    "location": "/codefresh/volume/monorepo-codefresh-demo/packages/servers/game2"
+  }
+]
