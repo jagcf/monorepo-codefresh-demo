@@ -1,0 +1,9 @@
+[
+  
+  {
+    "name": "@vgw-app/game1",
+    "version": "1.0.0",
+    "private": false,
+    "location": "/codefresh/volume/monorepo-codefresh-demo/packages/servers/game1"
+  }
+]
