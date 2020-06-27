@@ -16,7 +16,7 @@
     "@types/express": "^4.17.6",
     "@vgw-lib/server-base": "*",
     "express": "^4.17.1"
-  }
+  },
  "publishConfig": {
     "access": "private"
   }
