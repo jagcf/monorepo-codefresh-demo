@@ -3,6 +3,6 @@
     "name": "@vgw-lib/server-base",
     "version": "1.0.0",
     "private": false,
-    "location": "/Users/jagshetty/codefresh/src/vgw/monorepo-codefresh-demo/packages/libs/server-base"
+    "location": "/codefresh/volume/monorepo-codefresh-demo/packages/libs/server-base"
   }
 ]
