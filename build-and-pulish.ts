@@ -22,10 +22,10 @@ import {getCommandOutput, runCommandSync} from "./util/shell";
         console.log(`Building ${pkg.name} v${pkg.version} [${idx + 1} of ${numPackages}]`);
 
         runCommandSync(`npx lerna exec --scope=${pkg.name} -- npm install`);    // Install dependencies
-        runCommandSync(`npx lerna run unit-test --scope=${pkg.name}`);          // Unit tests
+      //  runCommandSync(`npx lerna run unit-test --scope=${pkg.name}`);          // Unit tests
         runCommandSync(`npx lerna run build --scope=${pkg.name}`);              // Build/compile code
-        runCommandSync(`npx lerna run build-artifacts --scope=${pkg.name}`);    // Create deployable artifacts
-        runCommandSync(`npx lerna run publish-artifacts --scope=${pkg.name}`);  // Publish artifacts
+      //  runCommandSync(`npx lerna run build-artifacts --scope=${pkg.name}`);    // Create deployable artifacts
+      //  runCommandSync(`npx lerna run publish-artifacts --scope=${pkg.name}`);  // Publish artifacts
 
 
 
