@@ -19,7 +19,7 @@
   "publishConfig": {
     "access": "public",
     "directory": "dist",
-     "registry": "http://my-npm_registry:4873/"
+     "registry": "https://cfsalesdev.jfrog.io/artifactory/api/npm/cfnpm/"
   }
 
 }
