@@ -1,6 +1,6 @@
 {
   "name": "@vgw-app/game1",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple game server",
   "author": "Luke Mundy <luke.mundy@vgw.co>",
   "files": [
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@types/express": "^4.17.6",
-    "@vgw-lib/server-base": "^1.0.9",
+    "@vgw-lib/server-base": "^1.0.10",
     "express": "^4.17.1"
   },
   "publishConfig": {
