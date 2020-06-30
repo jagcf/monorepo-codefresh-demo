@@ -14,5 +14,6 @@ FROM node:12-alpine AS dist
 
 WORKDIR /opt/game
 COPY --from=build /opt/game /opt/game
+EXPOSE 8001
 
 CMD [ "node", "./dist/index.js" ]
