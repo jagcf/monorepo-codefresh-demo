@@ -1,6 +1,6 @@
 {
   "name": "@vgw-lib/server-base",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Common code used across all servers",
   "author": "Luke Mundy <luke.mundy@vgw.co>",
   "files": [
@@ -19,7 +19,6 @@
   "publishConfig": {
     "access": "public",
     "directory": "dist",
-     "registry": "https://cfsalesdev.jfrog.io/artifactory/api/npm/cfnpm/"
+    "registry": "https://cfsalesdev.jfrog.io/artifactory/api/npm/cfnpm/"
   }
-
 }
