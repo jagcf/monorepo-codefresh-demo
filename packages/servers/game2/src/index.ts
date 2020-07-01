@@ -22,6 +22,6 @@ app.get('/play', (req, res) => {
     res.send(reels.map(r => r.join()).join("\n"));
 });
 
-const server = app.listen(8002, () => {
-    console.log('Game 2 listening on port 8002');
+const server = app.listen(8001, () => {
+    console.log('Game 2 listening on port 8001');
 })
