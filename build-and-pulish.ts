@@ -66,9 +66,11 @@ import * as fs from "fs";
     packagesWithPendingChanges.forEach(async (pkg, idx) => {
         console.log(`Trigger for  ${pkg.name} v${pkg.version} [${idx + 1} of ${numPackages}] is`);
 
-        let triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name}`)    // Install dependencies
+       // let triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name}`)    // Install dependencies
         
-        triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name} >> ${dependetsTriggersList}`) 
+      //  triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name} >> ${dependetsTriggersList}`) 
+        
+         runCommandSync(`cd ${pkg.location};npm run trigger >>  ${dependetsTriggersList}`);  
         
 //          let triggerOutputVal = (await triggerOutput).stdout;
 //         console.log(`${pkg.name} trigger is ${triggerOutputVal}`)
