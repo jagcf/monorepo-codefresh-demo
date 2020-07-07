@@ -68,10 +68,12 @@ import * as fs from "fs";
 
         let triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name}`)    // Install dependencies
         
-         let triggerOutputVal = (await triggerOutput).stdout;
-        console.log(`${pkg.name} trigger is ${triggerOutputVal}`)
+        triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name} >> ${dependetsTriggersList}`) 
+        
+//          let triggerOutputVal = (await triggerOutput).stdout;
+//         console.log(`${pkg.name} trigger is ${triggerOutputVal}`)
      
-        runCommandSync(`echo ${triggerOutputVal} >> ${dependetsTriggersList}`);              // Build/compile code
+//         runCommandSync(`echo ${triggerOutputVal} >> ${dependetsTriggersList}`);              // Build/compile code
 
        
     });
