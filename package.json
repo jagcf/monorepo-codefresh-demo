@@ -9,6 +9,8 @@
   "author": "Luke Mundy <luke.mundy@vgw.co>",
   "devDependencies": {
     "@types/node": "^14.0.13",
+    "@types/chai":"*",
+    "@types/mocha" :"*",
     "codefresh": "^0.69.0",
     "lerna": "^3.22.1",
     "rimraf": "^3.0.2",
