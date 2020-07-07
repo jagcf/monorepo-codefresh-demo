@@ -63,7 +63,7 @@ import * as fs from "fs";
     packagesWithPendingChanges.forEach((pkg, idx) => console.log(`${(idx + 1).toString().padStart(3, ' ')}: ${pkg.name}`));
     console.log('='.repeat(80));
 
-    packagesWithPendingChanges.forEach((pkg, idx) => {
+    packagesWithPendingChanges.forEach(async (pkg, idx) => {
         console.log(`Trigger for  ${pkg.name} v${pkg.version} [${idx + 1} of ${numPackages}] is`);
 
         let triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name}`)    // Install dependencies
