@@ -75,7 +75,7 @@ import * as fs from "fs";
         let packageListfile=`${pkg.location}/package.json`;
         
         console.log('packageListfile ',packageListfile);
-        var contents = fs.readFileSync(packageListfile) ;
+        var contents = fs.readFileSync(packageListfile,"utf8") ;
         var dependendentPackageJson = JSON.parse(contents);
         console.log('trigger name is' ,dependendentPackageJson.triggerName);
         
