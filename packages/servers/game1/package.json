@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc",
     "trigger" : "echo 'monorepogam1trigger'",
-    "test": "mocha --timeout 10000"
+   "test": "mocha -r ts-node/register tests/**/*.test.ts"
   },
   "dependencies": {
     "@types/express": "^4.17.6",
