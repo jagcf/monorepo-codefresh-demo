@@ -55,7 +55,24 @@ import * as fs from "fs";
     const cmdJsonWithDependents = getCommandOutput(`npx lerna ls --toposort  --scope='@vgw-app/*' --ignore '@dev-tool/*' --json --since`)
     const dependetsTriggersList = process.env.dptrigfilename || 'triggerList.json';
 
-    console.log("dependetsTriggersList = ",dependetsTriggersList);
+    packagesWithPendingChanges = JSON.parse((await cmdJson).stdout);
+    numPackages = packagesWithPendingChanges.length;
+
+    console.log('='.repeat(80));
+    console.log(`${numPackages} dependent packages build pipeline will be triggered`);
+    packagesWithPendingChanges.forEach((pkg, idx) => console.log(`${(idx + 1).toString().padStart(3, ' ')}: ${pkg.name}`));
+    console.log('='.repeat(80));
+
+    packagesWithPendingChanges.forEach((pkg, idx) => {
+        console.log(`Trigger for  ${pkg.name} v${pkg.version} [${idx + 1} of ${numPackages}] is`);
+
+        let triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name}`)    // Install dependencies
+        console.log(`${pkg.name} trigger is ${triggerOutput}`)
+     
+        runCommandSync(`echo ${triggerOutput} >> ${dependetsTriggersList}`);              // Build/compile code
+
+       
+    });
 
     // If the --deploy arg was passed, we run the trigger-pipeline script in each package
     if (process.argv.includes('--deploy')) {
