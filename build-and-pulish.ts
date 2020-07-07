@@ -15,9 +15,9 @@ import * as fs from "fs";
 
     const cmdJson = getCommandOutput(`npx lerna ls --toposort  --scope='@vgw-lib/*' --ignore '@dev-tool/*' --json --since`)
      
-    const packagesWithPendingChanges = JSON.parse((await cmdJson).stdout);
+    let packagesWithPendingChanges = JSON.parse((await cmdJson).stdout);
 
-    const numPackages = packagesWithPendingChanges.length;
+    let numPackages = packagesWithPendingChanges.length;
 
     // Print out what we'll be doing first, helpful for debugging
     console.log('='.repeat(80));
@@ -55,7 +55,7 @@ import * as fs from "fs";
     const cmdJsonWithDependents = getCommandOutput(`npx lerna ls --toposort  --scope='@vgw-app/*' --ignore '@dev-tool/*' --json --since`)
     const dependetsTriggersList = process.env.dptrigfilename || 'triggerList.json';
 
-    packagesWithPendingChanges = JSON.parse((await cmdJson).stdout);
+    packagesWithPendingChanges = JSON.parse((await cmdJsonWithDependents).stdout);
     numPackages = packagesWithPendingChanges.length;
 
     console.log('='.repeat(80));
@@ -67,9 +67,11 @@ import * as fs from "fs";
         console.log(`Trigger for  ${pkg.name} v${pkg.version} [${idx + 1} of ${numPackages}] is`);
 
         let triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name}`)    // Install dependencies
-        console.log(`${pkg.name} trigger is ${triggerOutput}`)
+        
+         let triggerOutputVal = (await triggerOutput).stdout;
+        console.log(`${pkg.name} trigger is ${triggerOutputVal}`)
      
-        runCommandSync(`echo ${triggerOutput} >> ${dependetsTriggersList}`);              // Build/compile code
+        runCommandSync(`echo ${triggerOutputVal} >> ${dependetsTriggersList}`);              // Build/compile code
 
        
     });
