@@ -32,10 +32,10 @@ import * as fs from "fs";
       //  runCommandSync(`npx lerna run unit-test --scope=${pkg.name}`);          // Unit tests
         runCommandSync(`npx lerna run build --scope=${pkg.name}`);              // Build/compile code
 
-        runCommandSync(`npx cd ${pkg.location}`);  
+        runCommandSync(`cd ${pkg.location}`);  
 
 
-        runCommandSync(`npx publish`);  
+        runCommandSync(`npm publish`);  
 
       //  runCommandSync(`npx lerna run build-artifacts --scope=${pkg.name}`);    // Create deployable artifacts
       //  runCommandSync(`npx lerna run publish-artifacts --scope=${pkg.name}`);  // Publish artifacts
