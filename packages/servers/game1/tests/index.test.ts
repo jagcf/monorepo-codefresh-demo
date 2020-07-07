@@ -4,7 +4,7 @@ import * as chai from 'chai';
 //const chai = require("chai");
 //const chaiHttp = require("chai-http");
 
-import * as chaiHttp from 'chaiHttp';
+import chaiHttp = require('chai-http');
 
 const { expect } = chai;
 chai.use(chaiHttp);
