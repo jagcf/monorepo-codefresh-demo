@@ -10,6 +10,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "trigger": "echo monorepogame2trigger",
     "test": "echo \"Error: no test 2 specified\" && exit 1"
   },
   "dependencies": {
