@@ -12,12 +12,17 @@
   "scripts": {
     "build": "tsc",
     "trigger" : "echo 'monorepogam1trigger'",
-    "test": "echo \"Error: no test 3 specified\" && exit 1"
+    "test": "mocha --timeout 10000"
   },
   "dependencies": {
     "@types/express": "^4.17.6",
     "@vgw-lib/server-base": "*",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
   },
   "publishConfig": {
     "access": "private"
