@@ -25,3 +25,6 @@ app.get('/play', (req, res) => {
 const server = app.listen(8001, () => {
     console.log('Game 1 listening on port 8001');
 })
+
+
+module.exports = app;
