@@ -4,7 +4,7 @@ import {RequestHandler} from 'express';
 export const healthcheck: RequestHandler<{}> = async (req, res) => {
     res.json({
         status: "pass",
-        info: "Service is healthy. v14",
+        info: "Service is healthy. v15",
         time: new Date()
     });
 };
