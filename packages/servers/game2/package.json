@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "A simple game server",
   "author": "Luke Mundy <luke.mundy@vgw.co>",
+  "triggerName":"monorepogame2trigger",
   "files": [
     "dist/"
   ],
