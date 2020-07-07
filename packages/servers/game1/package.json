@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/mocha": "^7.0.2",
+    "@types/chai-http" : "*",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "mocha": "^2.4.5"
