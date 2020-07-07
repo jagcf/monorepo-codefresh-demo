@@ -2,12 +2,19 @@
  * Build and publish all packages impacted by changes since the last publish
  */
 import {getCommandOutput, runCommandSync} from "./util/shell";
-
+import * as fs from "fs";
 (async () => {
 
     // Fetch all packages that have changed since the last git tag (ie last publish) as well as any packages that
     // depend on them. Exclude dev tools since they're only used locally
-    const cmdJson = getCommandOutput(`npx lerna ls --toposort --include-merged-tags --include-dependents --ignore '@dev-tool/*' --json --since`)
+   // const cmdJson = getCommandOutput(`npx lerna ls --toposort --include-merged-tags --include-dependents --ignore '@dev-tool/*' --json --since`)
+
+
+   console.log("script started");
+   console.log("collecing the changed shared libraries ..pacakges ubder the scope '@vgw-lib/*'");
+
+    const cmdJson = getCommandOutput(`npx lerna ls --toposort  --scope='@vgw-lib/*' --ignore '@dev-tool/*' --json --since`)
+     
     const packagesWithPendingChanges = JSON.parse((await cmdJson).stdout);
 
     const numPackages = packagesWithPendingChanges.length;
@@ -24,6 +31,12 @@ import {getCommandOutput, runCommandSync} from "./util/shell";
         runCommandSync(`npx lerna exec --scope=${pkg.name} -- npm install`);    // Install dependencies
       //  runCommandSync(`npx lerna run unit-test --scope=${pkg.name}`);          // Unit tests
         runCommandSync(`npx lerna run build --scope=${pkg.name}`);              // Build/compile code
+
+        runCommandSync(`npx cd ${pkg.location}`);  
+
+
+        runCommandSync(`npx publish`);  
+
       //  runCommandSync(`npx lerna run build-artifacts --scope=${pkg.name}`);    // Create deployable artifacts
       //  runCommandSync(`npx lerna run publish-artifacts --scope=${pkg.name}`);  // Publish artifacts
 
@@ -39,6 +52,11 @@ import {getCommandOutput, runCommandSync} from "./util/shell";
     console.log(`Successfully built and published ${numPackages} packages`);
     console.log('='.repeat(80));
 
+    const cmdJsonWithDependents = getCommandOutput(`npx lerna ls --toposort  --scope='@vgw-app/*' --ignore '@dev-tool/*' --json --since`)
+    const dependetsTriggersList = process.env.dptrigfilename || 'triggerList.json';
+
+    console.log("dependetsTriggersList = ",dependetsTriggersList);
+
     // If the --deploy arg was passed, we run the trigger-pipeline script in each package
     if (process.argv.includes('--deploy')) {
         packagesWithPendingChanges.forEach((pkg, idx) => {
@@ -52,3 +70,4 @@ import {getCommandOutput, runCommandSync} from "./util/shell";
     console.error(err);
     process.exit(-1);
 });
+
