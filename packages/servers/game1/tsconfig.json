@@ -17,5 +17,6 @@
 
     "references": [{
         "path": "../../libs/server-base"
-    }]
+    }],
+    "noImplicitAny": false
 }
