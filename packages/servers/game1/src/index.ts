@@ -27,4 +27,4 @@ const server = app.listen(8001, () => {
 })
 
 
-module.exports = app;
+export default app;
