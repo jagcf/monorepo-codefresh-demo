@@ -70,12 +70,16 @@ import * as fs from "fs";
         
       //  triggerOutput = getCommandOutput(`npx lerna run trigger --scope=${pkg.name} >> ${dependetsTriggersList}`) 
         
-         runCommandSync(`cd ${pkg.location};npm run trigger >>  ${dependetsTriggersList}`);  
+        // runCommandSync(`cd ${pkg.location};npm run trigger >>  ${dependetsTriggersList}`);  
+        let packageListfile=`${pkg.location}/package.json`;
+        var contents = fs.readFileSync(packageListfile) ;
+        var dependendentPackageJson = JSON.parse(contents);
+       console.log('trigger name is' ,dependendentPackageJson.triggerName);
         
 //          let triggerOutputVal = (await triggerOutput).stdout;
 //         console.log(`${pkg.name} trigger is ${triggerOutputVal}`)
      
-//         runCommandSync(`echo ${triggerOutputVal} >> ${dependetsTriggersList}`);              // Build/compile code
+        runCommandSync(`echo ${dependendentPackageJson.triggerName} >> ${dependetsTriggersList}`);              // Build/compile code
 
        
     });
