@@ -1,6 +1,6 @@
 //const app = require("../app");
 
-import * as app from '../app';
+import * as app from '../index';
 import * as chai from 'chai';
 
 //const chai = require("chai");
