@@ -1,7 +1,7 @@
 {
   "name": "@vgw-app/game1",
   "version": "1.0.5",
-  "description": "A simple game server.Pr opne commit test pr commit test",
+  "description": "A simple game server.Pr opne commit test pr commit test1",
   "author": "Luke Mundy <luke.mundy@vgw.co>",
   "triggerName":"monorepogam1trigger",
   "files": [
