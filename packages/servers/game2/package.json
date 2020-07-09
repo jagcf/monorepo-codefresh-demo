@@ -1,7 +1,7 @@
 {
   "name": "@vgw-app/game2",
   "version": "1.0.2",
-  "description": "A simple game server.test 4666 test 2",
+  "description": "A simple game server.test 4666 test 3",
   "author": "Luke Mundy <luke.mundy@vgw.co>",
   "triggerName":"monorepogame2trigger",
   "files": [
